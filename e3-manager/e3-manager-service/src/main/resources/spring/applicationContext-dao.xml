@@ -29,6 +29,24 @@
 		<property name="dataSource" ref="dataSource" />
 		<!-- 加载mybatis的全局配置文件 -->
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
+		<!-- 配置MyBatis相关的插件 -->
+		<property name="plugins">
+			<list>
+				<!-- 添加分页插件 -->
+				<bean class="com.github.pagehelper.PageHelper">
+					<property name="properties">
+						<props>
+							<!-- 设置数据库类型 Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库-->        
+							<prop key="dialect">mysql</prop>
+							<prop key="offsetAsPageNum">true</prop>
+							<prop key="rowBoundsWithCount">true</prop>
+							<prop key="pageSizeZero">true</prop>
+							<prop key="reasonable">true</prop>
+						</props>
+					</property>
+				</bean>
+			</list>
+		</property>
 	</bean>
 
 	<!-- 配置MyBatis扫描mapper的路径 -->
