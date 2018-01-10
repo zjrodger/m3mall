@@ -1,6 +1,8 @@
 package com.zjrodger.e3mall.pojo;
 
-public class TbOrderItem {
+import java.io.Serializable;
+
+public class TbOrderItem implements Serializable {
     /**
      * 
      */
