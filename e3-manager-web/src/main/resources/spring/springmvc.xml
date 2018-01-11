@@ -23,9 +23,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- 引用dubbo服务 -->
-	<dubbo:application name="e3-manager-web"/>
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
-	<dubbo:reference interface="com.zjrodger.e3mall.service.ItemService" id="itemService" />
+	<!-- 引入Consumer端的dubbo服务的配置 -->
+	<import resource="applicationContext-dubbo.xml"/>
 	
 </beans>
