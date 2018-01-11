@@ -44,6 +44,7 @@
 
 
 # e3-manager-web项目，忽略掉的内容
+e3-manager-web/bin/
 e3-manager-web/target/
 e3-manager-web/.settings/
 e3-manager-web/.classpath
