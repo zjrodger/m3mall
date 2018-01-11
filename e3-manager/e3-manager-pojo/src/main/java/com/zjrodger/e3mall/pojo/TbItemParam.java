@@ -1,8 +1,9 @@
 package com.zjrodger.e3mall.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TbItemParam {
+public class TbItemParam implements Serializable {
     /**
      * 
      */
@@ -107,4 +108,11 @@ public class TbItemParam {
     public void setParamData(String paramData) {
         this.paramData = paramData == null ? null : paramData.trim();
     }
+
+	@Override
+	public String toString() {
+		return "TbItemParam [id=" + id + ", itemCatId=" + itemCatId
+				+ ", created=" + created + ", updated=" + updated
+				+ ", paramData=" + paramData + "]";
+	}
 }
