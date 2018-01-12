@@ -24,7 +24,7 @@
 
 		<!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
 		<!-- append属性决定了系统每次启动后，对之前的日志文件，是覆盖还是追加 -->
-		<RollingFile name="RollingFileInfo" fileName="${logging.path}/logs/info.log"
+		<RollingFile name="RollingFileInfo" fileName="${logging.path}/logs/web_info.log"
 			filePattern="${logging.path}/logs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log" append="false">
 			<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
 			<ThresholdFilter level="info" onMatch="ACCEPT"
@@ -36,7 +36,7 @@
 			</Policies>
 		</RollingFile>
 		
-		<RollingFile name="RollingFileWarn" fileName="${logging.path}/logs/warn.log"
+		<RollingFile name="RollingFileWarn" fileName="${logging.path}/logs/web_warn.log"
 			filePattern="${logging.path}/logs/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log" append="false">
 			<ThresholdFilter level="warn" onMatch="ACCEPT"
 				onMismatch="DENY" />
@@ -50,7 +50,7 @@
 		</RollingFile>
 		
 		
-		<RollingFile name="RollingFileError" fileName="${logging.path}/logs/error.log"
+		<RollingFile name="RollingFileError" fileName="${logging.path}/logs/web_error.log"
 			filePattern="${logging.path}/logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log" append="false">
 			<ThresholdFilter level="error" onMatch="ACCEPT"
 				onMismatch="DENY" />
