@@ -249,12 +249,38 @@
 				<groupId>org.apache.zookeeper</groupId>
 				<artifactId>zookeeper</artifactId>
 				<version>${zookeeper.version}</version>
+				<!-- 使用log4j2日志框架，排除原生的log4j -->
+				<exclusions>  
+					<exclusion>  
+						<groupId>org.slf4j</groupId>  
+						<artifactId>slf4j-log4j12</artifactId>  
+					</exclusion>  
+					<exclusion>  
+						<groupId>log4j</groupId>  
+						<artifactId>log4j</artifactId>  
+					</exclusion>  
+				</exclusions>				
 			</dependency>
+			
 			<dependency>
 				<groupId>com.github.sgroschupf</groupId>
 				<artifactId>zkclient</artifactId>
 				<version>${zkclient.version}</version>
+				<!-- 使用log4j2日志框架，排除原生的log4j -->
+				<exclusions>  
+					<exclusion>  
+						<groupId>org.slf4j</groupId>  
+						<artifactId>slf4j-log4j12</artifactId>  
+					</exclusion>
+					<!-- 虽然整个应用采用log4j2日志框架，但在此处，需要引入log4j第一代的日志框架，否则就会爆出如下错误 -->
+					<!-- java.lang.NoClassDefFoundError: org/apache/log4j/Logger at org.I0Itec.zkclient.ZkClient.<clinit>(ZkClient.java:57) -->					  
+<!-- 					<exclusion>  
+						<groupId>log4j</groupId>  
+						<artifactId>log4j</artifactId>  
+					</exclusion> -->  
+				</exclusions>				
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>activemq-all</artifactId>
