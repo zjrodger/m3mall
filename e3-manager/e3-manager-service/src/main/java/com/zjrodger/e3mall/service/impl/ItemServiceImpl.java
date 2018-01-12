@@ -1,11 +1,14 @@
 package com.zjrodger.e3mall.service.impl;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zjrodger.e3mall.mapper.TbItemMapper;
 import com.zjrodger.e3mall.pojo.TbItem;
+import com.zjrodger.e3mall.pojo.TbItemExample;
 import com.zjrodger.e3mall.service.ItemService;
 
 /**
@@ -23,6 +26,19 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public TbItem getItemById(long id) {
 		return tbItemMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<TbItem> getItemList(TbItemExample example) {
+		
+		// 组装条件
+//		TbItemExample example = new TbItemExample();
+		
+		// 执行查询
+		
+		// 返回结果
+		
+		return null;
 	}
 
 //	public EasyUIDataGridResult getItemList(int page, int rows) {

@@ -16,5 +16,4 @@ public class PageController {
 	public String showPage(@PathVariable String pageName){
 		return pageName;
 	}
-	
 }

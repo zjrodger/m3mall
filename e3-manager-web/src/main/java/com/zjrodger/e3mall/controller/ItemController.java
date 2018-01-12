@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.zjrodger.e3mall.common.pojo.EasyUIDataGridResult;
 import com.zjrodger.e3mall.pojo.TbItem;
 import com.zjrodger.e3mall.service.ItemService;
 
@@ -27,5 +28,14 @@ public class ItemController {
 		System.out.println("前端输入的参数：itemId = " + itemId + "，查询到的结果：" + itemId.toString());
 		return item;
 	} 
+	
+	@RequestMapping("/item/list")
+	@ResponseBody
+	public EasyUIDataGridResult getItemList(int page, int rows){
+		logger.info("前端输入的参数：page = " + page + "，查询到的结果：" + rows);
+		System.out.println("控制台输出：前端输入的参数：page = " + page + "，查询到的结果：" + rows);
+		return null;
+	}	
+	
 	
 }
