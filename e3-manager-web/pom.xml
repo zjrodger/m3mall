@@ -64,6 +64,12 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- 解决警告: Hessian/Burlap: 'com.github.pagehelper.Page' is an unknown class in WebappClassLoader -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+		</dependency>
 
 
 		<!-- dubbo相关 -->
