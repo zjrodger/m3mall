@@ -16,6 +16,7 @@
 		<mybatis.paginator.version>1.2.15</mybatis.paginator.version>
 		<mysql.version>5.1.32</mysql.version>
 		<slf4j.version>1.6.4</slf4j.version>
+		<log4j2.version>2.4.1</log4j2.version>
 		<jackson.version>2.4.2</jackson.version>
 		<druid.version>1.0.9</druid.version>
 		<httpclient.version>4.3.5</httpclient.version>
@@ -90,12 +91,49 @@
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
-			<!-- 日志处理 -->
-			<dependency>
+			
+			
+			<!-- ===================================== -->
+			<!-- ============== 日志处理  ============== -->
+			<!-- ===================================== -->
+			
+			<!-- 下列的配置使用log4j2日志框架-->
+			<!-- 桥接层：用于slf4j接口与log4j(第一代)日志框架之间的桥接 -->
+<!-- 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
+ -->			
+			
+			<!-- 1.桥接层：用于slf4j接口与log4j2(第二代)日志框架之间的桥接-->
+			<!-- 注意：两代的桥接器不能同时使用-->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			
+			<!-- 2.日志框架层：使用log4j2日志框架-->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			
+			<!--web工程需要包含log4j-web，非web工程不需要-->	
+			<dependency>  
+			    <groupId>org.apache.logging.log4j</groupId>  
+			    <artifactId>log4j-web</artifactId>  
+			    <version>${log4j2.version}</version>  
+			</dependency>			
+			
+			
 			<!-- Mybatis -->
 			<dependency>
 				<groupId>org.mybatis</groupId>
@@ -211,12 +249,38 @@
 				<groupId>org.apache.zookeeper</groupId>
 				<artifactId>zookeeper</artifactId>
 				<version>${zookeeper.version}</version>
+				<!-- 使用log4j2日志框架，排除原生的log4j -->
+				<exclusions>  
+					<exclusion>  
+						<groupId>org.slf4j</groupId>  
+						<artifactId>slf4j-log4j12</artifactId>  
+					</exclusion>  
+					<exclusion>  
+						<groupId>log4j</groupId>  
+						<artifactId>log4j</artifactId>  
+					</exclusion>  
+				</exclusions>				
 			</dependency>
+			
 			<dependency>
 				<groupId>com.github.sgroschupf</groupId>
 				<artifactId>zkclient</artifactId>
 				<version>${zkclient.version}</version>
+				<!-- 使用log4j2日志框架，排除原生的log4j -->
+				<exclusions>  
+					<exclusion>  
+						<groupId>org.slf4j</groupId>  
+						<artifactId>slf4j-log4j12</artifactId>  
+					</exclusion>
+					<!-- 虽然整个应用采用log4j2日志框架，但在此处，需要引入log4j第一代的日志框架，否则就会爆出如下错误 -->
+					<!-- java.lang.NoClassDefFoundError: org/apache/log4j/Logger at org.I0Itec.zkclient.ZkClient.<clinit>(ZkClient.java:57) -->					  
+<!-- 					<exclusion>  
+						<groupId>log4j</groupId>  
+						<artifactId>log4j</artifactId>  
+					</exclusion> -->  
+				</exclusions>				
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>activemq-all</artifactId>

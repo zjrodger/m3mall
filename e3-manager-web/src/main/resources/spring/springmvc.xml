@@ -13,6 +13,7 @@
 	
 	<mvc:annotation-driven />
 	
+	<!-- 配置资源映射 -->	
 	<!-- 由于在web.xml中定义的url拦截形式为“/”表示拦截所有的url请求，包括静态资源例如css、js等。所以需要在springmvc.xml中添加资源映射标签： -->
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
@@ -23,9 +24,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- 引用dubbo服务 -->
-	<dubbo:application name="e3-manager-web"/>
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
-	<dubbo:reference interface="com.zjrodger.e3mall.service.ItemService" id="itemService" />
+	<!-- 引入Consumer端的dubbo服务的配置 -->
+	<import resource="applicationContext-dubbo.xml"/>
 	
 </beans>

@@ -1,8 +1,9 @@
 package com.zjrodger.e3mall.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TbOrderShipping {
+public class TbOrderShipping implements Serializable {
     /**
      * 订单ID
      */
@@ -233,4 +234,17 @@ public class TbOrderShipping {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
+
+	@Override
+	public String toString() {
+		return "TbOrderShipping [orderId=" + orderId + ", receiverName="
+				+ receiverName + ", receiverPhone=" + receiverPhone
+				+ ", receiverMobile=" + receiverMobile + ", receiverState="
+				+ receiverState + ", receiverCity=" + receiverCity
+				+ ", receiverDistrict=" + receiverDistrict
+				+ ", receiverAddress=" + receiverAddress + ", receiverZip="
+				+ receiverZip + ", created=" + created + ", updated=" + updated
+				+ "]";
+	}
+    
 }

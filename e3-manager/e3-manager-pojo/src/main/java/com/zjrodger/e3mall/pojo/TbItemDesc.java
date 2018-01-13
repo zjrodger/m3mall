@@ -1,8 +1,9 @@
 package com.zjrodger.e3mall.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TbItemDesc {
+public class TbItemDesc implements Serializable {
     /**
      * 商品ID
      */
@@ -86,4 +87,11 @@ public class TbItemDesc {
     public void setItemDesc(String itemDesc) {
         this.itemDesc = itemDesc == null ? null : itemDesc.trim();
     }
+
+	@Override
+	public String toString() {
+		return "TbItemDesc [itemId=" + itemId + ", created=" + created
+				+ ", updated=" + updated + ", itemDesc=" + itemDesc + "]";
+	}
+    
 }

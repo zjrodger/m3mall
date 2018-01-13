@@ -55,6 +55,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
+		
+		<!--web工程需要包含log4j-web，非web工程不需要-->	
+		<dependency>  
+		    <groupId>org.apache.logging.log4j</groupId>  
+		    <artifactId>log4j-web</artifactId>  
+		    <scope>runtime</scope>  
+		</dependency>		
 
 		<!-- dubbo相关 -->
 		<dependency>

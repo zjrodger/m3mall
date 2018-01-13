@@ -1,6 +1,9 @@
 package com.zjrodger.e3mall.mapper;
 
+import java.util.List;
+
 import com.zjrodger.e3mall.pojo.TbItem;
+import com.zjrodger.e3mall.pojo.TbItemExample;
 
 public interface TbItemMapper {
     /**
@@ -38,5 +41,8 @@ public interface TbItemMapper {
      * @mbggenerated 2018-01-09
      */
     int updateByPrimaryKey(TbItem record);
+
+    
+	List<TbItem> selectByExample(TbItemExample example);
 
 }

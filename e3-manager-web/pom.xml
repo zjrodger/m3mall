@@ -64,6 +64,12 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- 解决警告: Hessian/Burlap: 'com.github.pagehelper.Page' is an unknown class in WebappClassLoader -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+		</dependency>
 
 
 		<!-- dubbo相关 -->
@@ -89,6 +95,14 @@
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
 		</dependency>
+		
+		<!--web工程需要包含log4j-web，非web工程不需要-->	
+		<dependency>  
+		    <groupId>org.apache.logging.log4j</groupId>  
+		    <artifactId>log4j-web</artifactId>  
+		    <scope>runtime</scope>  
+		</dependency>		
+		
 	</dependencies>
 
 

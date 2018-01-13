@@ -360,4 +360,18 @@ public class TbOrder implements Serializable {
     public void setBuyerRate(Integer buyerRate) {
         this.buyerRate = buyerRate;
     }
+
+	@Override
+	public String toString() {
+		return "TbOrder [orderId=" + orderId + ", payment=" + payment
+				+ ", paymentType=" + paymentType + ", postFee=" + postFee
+				+ ", status=" + status + ", createTime=" + createTime
+				+ ", updateTime=" + updateTime + ", paymentTime=" + paymentTime
+				+ ", consignTime=" + consignTime + ", endTime=" + endTime
+				+ ", closeTime=" + closeTime + ", shippingName=" + shippingName
+				+ ", shippingCode=" + shippingCode + ", userId=" + userId
+				+ ", buyerMessage=" + buyerMessage + ", buyerNick=" + buyerNick
+				+ ", buyerRate=" + buyerRate + "]";
+	}
+    
 }
