@@ -38,6 +38,8 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public EasyUIDataGridResult getItemList(Integer page, Integer rows) {
 		
+		logger.info("getItemList()方法接收到请求");
+		
 		//设置分页信息
 		PageHelper.startPage(page, rows);
 		

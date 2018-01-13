@@ -1,7 +1,5 @@
 package com.zjrodger.e3mall.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zjrodger.e3mall.common.pojo.EasyUIDataGridResult;
 import com.zjrodger.e3mall.pojo.TbItem;
-import com.zjrodger.e3mall.pojo.TbItemExample;
 import com.zjrodger.e3mall.service.ItemService;
 
+/**
+ * 商品Controller
+ * @Description: 
+ * @Author: zjrodger
+ * @Date 2018年1月13日
+ */
 @Controller
 public class ItemController {
 	

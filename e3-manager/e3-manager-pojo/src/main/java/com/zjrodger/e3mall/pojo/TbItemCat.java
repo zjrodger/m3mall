@@ -32,7 +32,7 @@ public class TbItemCat implements Serializable {
     /**
      * 该类目是否为父类目，1为true，0为false
      */
-    private Byte isParent;
+    private Boolean isParent;
 
     /**
      * 创建时间
@@ -128,17 +128,17 @@ public class TbItemCat implements Serializable {
      * 该类目是否为父类目，1为true，0为false
      * @return is_parent 该类目是否为父类目，1为true，0为false
      */
-    public Byte getIsParent() {
-        return isParent;
-    }
+	public Boolean getIsParent() {
+		return isParent;
+	}
 
     /**
      * 该类目是否为父类目，1为true，0为false
      * @param isParent 该类目是否为父类目，1为true，0为false
      */
-    public void setIsParent(Byte isParent) {
-        this.isParent = isParent;
-    }
+	public void setIsParent(Boolean isParent) {
+		this.isParent = isParent;
+	}
 
     /**
      * 创建时间
