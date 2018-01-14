@@ -17,6 +17,7 @@
 		<mysql.version>5.1.32</mysql.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<log4j2.version>2.4.1</log4j2.version>
+		<logback.version>1.1.5</logback.version>
 		<jackson.version>2.4.2</jackson.version>
 		<druid.version>1.0.9</druid.version>
 		<httpclient.version>4.3.5</httpclient.version>
@@ -98,7 +99,7 @@
 			<!-- ===================================== -->
 			
 			<!-- 下列的配置使用log4j2日志框架-->
-			<!-- 桥接层：用于slf4j接口与log4j(第一代)日志框架之间的桥接 -->
+			<!-- 1.桥接层：用于slf4j接口与log4j(第一代)日志框架之间的桥接 -->
 <!-- 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
@@ -115,6 +116,7 @@
 			</dependency>
 			
 			<!-- 2.日志框架层：使用log4j2日志框架-->
+			<!-- log4j-core和log4j-api是log4j2日志框架的必备jar包 -->
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-core</artifactId>
@@ -132,6 +134,32 @@
 			    <artifactId>log4j-web</artifactId>  
 			    <version>${log4j2.version}</version>  
 			</dependency>			
+			
+			
+			<!-- 2.logback日志系统组件 -->
+			<!-- 
+				logback当前分成三个模块：logback-core,logback- classic和logback-access。
+				(1)logback-core是其它两个模块的基础模块。 
+				(2)logback-classic是log4j的一个 改良版本。
+					此外logback-classic完整实现SLF4J API使你可以很方便地更换成其它日志系统如log4j或JDK14 Logging。
+				(3)logback-access访问模块与Servlet容器集成提供通过Http来访问日志的功能。
+			-->
+<!-- 			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-access</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency> -->			
+			
 			
 			
 			<!-- Mybatis -->
