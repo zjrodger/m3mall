@@ -49,3 +49,11 @@ e3-manager-web/target/
 e3-manager-web/.settings/
 e3-manager-web/.classpath
 e3-manager-web/.project
+
+
+# e3-portal-web项目，忽略掉的内容
+e3-portal-web/bin/
+e3-portal-web/target/
+e3-portal-web/.settings/
+e3-portal-web/.classpath
+e3-portal-web/.project
