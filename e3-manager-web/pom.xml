@@ -103,12 +103,6 @@
 		    <scope>runtime</scope>  
 		</dependency>	
 		
-		<!-- 引入图片服务器fastDFS的Java客户端依赖 -->
-		<dependency>
-			<groupId>fastdfs_client</groupId>
-			<artifactId>fastdfs_client</artifactId>
-			<version>1.25</version>		
-		</dependency>					
 	</dependencies>
 
 

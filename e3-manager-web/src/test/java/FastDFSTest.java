@@ -5,12 +5,14 @@ import org.csource.fastdfs.TrackerClient;
 import org.csource.fastdfs.TrackerServer;
 import org.junit.Test;
 
+import com.zjrodger.e3mall.common.util.FastDFSClient;
+
 
 
 
 public class FastDFSTest {
 
-	@Test
+//	@Test
 	public void testUpload() throws Exception {
 		//创建一个配置文件。文件名任意。内容就是tracker服务器的地址。
 		//使用全局对象加载配置文件。
@@ -30,11 +32,21 @@ public class FastDFSTest {
 		}
 	}
 	
+	public static void main(String[] args) throws Exception {
+		FastDFSTest obj = new FastDFSTest();
+		obj.testUpload();
+	}
+	
 	@Test
 	public void testFastDfsClient() throws Exception {
-//		FastDFSClient fastDFSClient = new FastDFSClient("D:/workspaces-itcast/JavaEE32/e3-manager-web/src/main/resources/conf/client.conf");
-//		String string = fastDFSClient.uploadFile("D:/Documents/Pictures/images/200811281555127886.jpg");
-//		System.out.println(string);
+		
+		FastDFSClient fastDFSClient = new FastDFSClient("C:/WorkSpace4E3Mall/E3Mall/e3-manager-web/src/main/resources/conf/client.conf");
+		String string01 = fastDFSClient.uploadFile("C:/Tmp/01.jpg");
+		System.out.println(string01);
+		
+		String string02 = fastDFSClient.uploadFile("C:/Tmp/02.jpg");
+		System.out.println(string02);
+		
 	}	
 	
 }
