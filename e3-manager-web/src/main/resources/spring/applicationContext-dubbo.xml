@@ -11,8 +11,8 @@
 
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="e3-manager-web"/>
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
-	<!-- <dubbo:registry protocol="zookeeper" address="172.16.18.14:2181"/> -->
+	<!-- <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/> -->	
+	<dubbo:registry protocol="zookeeper" address="172.16.18.14:2181"/>
 	<!-- 订阅ItemService接口服务 -->
 	<dubbo:reference interface="com.zjrodger.e3mall.service.ItemService" id="itemService" />
 	<!-- 订阅ItemCatService接口服务 -->
